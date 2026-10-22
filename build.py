@@ -26,7 +26,10 @@ meta = f'''<meta charset="utf-8">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 '''
-out = '<!doctype html>\n<html lang="fr">\n<head>\n' + meta + head_part + '\n</head>\n<body>' + body_part + '\n</body>\n</html>\n'
+ANALYTICS = """<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};
+window.va("beforeSend",function(e){try{var u=new URL(e.url);if(u.hash){var h=decodeURIComponent(u.hash.slice(1));u.pathname=(h&&h!=="accueil")?"/"+h:"/";u.hash="";}return Object.assign({},e,{url:u.toString()});}catch(x){return e;}});</script>
+<script defer src="/_vercel/insights/script.js"></script>"""
+out = '<!doctype html>\n<html lang="fr">\n<head>\n' + meta + head_part + '\n' + ANALYTICS + '\n</head>\n<body>' + body_part + '\n</body>\n</html>\n'
 os.makedirs(os.path.join(ROOT, "photos"), exist_ok=True)
 def _ph(m):
     k, ext, b = m.group(1), m.group(2), m.group(3)
