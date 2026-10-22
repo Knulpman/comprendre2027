@@ -3057,7 +3057,7 @@ function makePdf(btn){
   }).catch(function(){done("Échec du chargement, réessayez");});
 }
 
-var REPORT_URL="";
+var REPORT_URL="https://tally.so/r/LDZEAG";
 Array.prototype.forEach.call(document.querySelectorAll("[data-report]"),function(a){if(REPORT_URL){a.href=REPORT_URL;a.target="_blank";a.rel="noopener";}else{a.hidden=true;}});
 /* ===================== Fichier agenda ===================== */
 if(STANDALONE){Array.prototype.forEach.call(document.querySelectorAll(".ics-row"),function(r){r.hidden=false;});Array.prototype.forEach.call(document.querySelectorAll(".ics-note"),function(r){r.hidden=true;});}
